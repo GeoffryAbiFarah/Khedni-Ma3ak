@@ -1,11 +1,33 @@
 import {put, takeLatest, call} from 'redux-saga/effects';
+import { bookTourSuccessAction } from '../actions/bookTourAction';
 import { errorAction } from '../actions/errorAction';
 import { loadingAction } from '../actions/loadingAction';
 import { receiveAll } from '../actions/placesAction';
 import { receiveSearch } from '../actions/searchAction';
 import {fetchDataAll, fetchDataNameTypeArea, fetchDataNameType, fetchDataNameArea, fetchDataTypeArea,
-    fetchDataName, fetchDataType, fetchDataArea} from '../api';
-import { REQUEST_ALL_PLACES, REQUEST_SEARCHED_PLACES } from '../types';
+    fetchDataName, fetchDataType, fetchDataArea, postAreaTour} from '../api';
+import { POST_BOOK_TOUR, REQUEST_ALL_PLACES, REQUEST_SEARCHED_PLACES } from '../types';
+
+//post Area Tour
+function* bookTourAsync(action){
+    try {
+        console.log("BEFORE POSTINGGGG")
+        yield call (postAreaTour,action.data);
+        console.log("POSTEDDDDD")
+        yield put(bookTourSuccessAction);
+        console.log("AFTER SUCCESS")
+
+    }
+    catch (e){
+        console.log("Caught the error :"+e)
+        yield put(errorAction("Error adding area tour!"))
+    }
+}
+
+export function* watchBookTour(){
+    yield takeLatest(POST_BOOK_TOUR, bookTourAsync);
+}
+
 
 // All places
 function* allAsync(action){
@@ -66,3 +88,4 @@ function* searchAsync(action){
 export function* watchSearch(){
     yield takeLatest(REQUEST_SEARCHED_PLACES, searchAsync);
 }
+
