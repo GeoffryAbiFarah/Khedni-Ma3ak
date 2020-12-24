@@ -51,10 +51,9 @@ function SearchBar() {
                             color="secondary"
                             native
                             label="Type"
-                            id = "area-id"
+                            id = "type-id"
                             >
                             <option aria-label="None" value="" />
-                            {/* <option value={'all'}>All Types</option> */}
                             <option value={'hotel'}>Hotel</option>
                             <option value={'restaurant'}>Restaurant</option>
                             <option value={'night club'}>Night Club</option>
@@ -73,12 +72,11 @@ function SearchBar() {
                             color="secondary"
                             native
                             label="Type"
-                            id = "type-id"
+                            id = "area-id"
                             >
                             <option aria-label="None" value="" />
-                            {/* <option value={'all'}>All Types</option> */}
                             <option value={'beirut'}>Beirut</option>
-                            <option value={'dbayeh'}>Dbayeh</option>
+                            <option value={'byblos'}>Byblos</option>
                             <option value={'jdeideh'}>Jdeideh</option>
                             </Select>
                         </FormControl>

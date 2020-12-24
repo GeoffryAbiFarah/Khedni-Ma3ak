@@ -1,11 +1,10 @@
 import React from 'react';
-import SearchBar from './SearchBar';
-
+import AllPlaces from './AllPlaces';
 
 function HomeBody() {
   return (
     <div>
-      HomeBody
+      <AllPlaces/>
     </div>
   );
 }

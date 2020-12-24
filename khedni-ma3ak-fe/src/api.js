@@ -3,11 +3,18 @@
 //all places API CALL
 export const fetchDataAll = async () => {
     try {
-        const resp = await fetch("/places");
+        const resp = await fetch(`/places`,{
+            headers:{
+                "accepts":"application/json"
+            }
+        })
+        console.log(resp)
         const data = await resp.json();
+        console.log(data)
         return data;
     }
     catch(e) {
+        console.log("AHHHHHHHHH")
         console.log(e)
     }
 }

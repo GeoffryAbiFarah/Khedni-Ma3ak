@@ -7,8 +7,8 @@ export const showAllAction = () => {
     })
 }
 
-// export const showVisitedAction = () => {
-//     return({
-//         type: SHOW_SEARCHED_PLACES,
-//     })
-// }
+export const showSearchedAction = () => {
+    return({
+        type: SHOW_SEARCHED_PLACES,
+    })
+}

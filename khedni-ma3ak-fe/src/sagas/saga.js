@@ -29,24 +29,24 @@ export function* watchAll(){
 //Search places
 function* searchAsync(action){
     try {
-        let searched = 0;
+        let searched = [];
         yield put(loadingAction(true));
-        if (action.data.name === "" && action.data.type === ""){
+        if (action.data.name === "" && action.data.type === "" && action.data.area !== ""){
         searched = yield call (fetchDataArea,action.data);
         }
-        else if (action.data.name === "" || action.data.area === ""){
+        else if (action.data.name === ""  && action.data.type !== "" && action.data.area === ""){
             searched = yield call (fetchDataType,action.data);
         }
-        else if (action.data.type === "" || action.data.area === ""){
+        else if (action.data.name !== ""  && action.data.type === "" && action.data.area === ""){
             searched = yield call (fetchDataName,action.data);
         }
-        else if (action.data.name === ""){
+        else if (action.data.name === "" && action.data.type !== "" && action.data.area !== ""){
         searched = yield call (fetchDataTypeArea,action.data);
         }
-        else if (action.data.type === ""){
+        else if (action.data.name !== "" && action.data.type === "" && action.data.area !== ""){
             searched = yield call (fetchDataNameArea,action.data);
         }
-        else if (action.data.area === ""){
+        else if (action.data.name !== "" && action.data.type !== "" && action.data.area === ""){
             searched = yield call (fetchDataNameType,action.data);
         }
         else{
