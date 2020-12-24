@@ -5,7 +5,7 @@ import BookTour from './components/BookTour';
 function App() {
   return (
     <div className="App">
-
+      <BookTour />
     </div>
   );
 }

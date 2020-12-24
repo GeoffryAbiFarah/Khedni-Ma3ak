@@ -7,15 +7,16 @@ function BookTour() {
   const { value: firstName, bind: bindFirstName, reset: resetFirstName } = useInput('');
   const { value: lastName, bind: bindLastName, reset: resetLastName } = useInput('');
   const { value: email, bind: bindEmail, reset: resetEmail } = useInput('');
-
+  const { value: phone, bind: bindPhonenbr, reset: resetPhone } = useInput('');
 
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    alert(`Your tour has been booked, please check your email for confirmation!`);
+    alert(`Your tour has been booked, we will contact you soon!`);
     resetFirstName();
     resetLastName();
     resetEmail();
+    resetPhone();
   }
   return (
     <form onSubmit={handleSubmit}>
@@ -27,6 +28,11 @@ function BookTour() {
       <label>
         Last Name:
         <input type="text" {...bindLastName} />
+      </label>
+      <br />
+      <label>
+        Phone Number:
+        <input type="text" {...bindPhonenbr} />
       </label>
       <br />
       <label>
