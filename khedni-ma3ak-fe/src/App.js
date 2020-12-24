@@ -1,11 +1,24 @@
 import './App.css';
-import BookTour from './components/BookTour';
 
-
+import NavBar from './components/NavBar';
+import { BrowserRouter as Router,Switch,Route} from 'react-router-dom';
+import Home from "./components/Home";
+import BookTour from "./components/BookTour";
+import ContactUs from './components/ContactUs';
+import AboutUs from './components/AboutUs';
 function App() {
   return (
     <div className="App">
-      <BookTour />
+      <Router>
+        <NavBar/>
+        <Switch>
+        <Route path="/book-tour" component={BookTour}/>
+        <Route path="/contact-us" component={ContactUs} />
+        <Route path="/about-us" component={AboutUs} />
+        <Route path="/" component={Home} />
+      </Switch>
+      </Router>
+
     </div>
   );
 }
