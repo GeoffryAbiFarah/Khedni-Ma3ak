@@ -11,3 +11,6 @@ export const SHOW_ERROR = 'SHOW_ERROR';
 export const CLEAR_ERROR = 'CLEAR_ERROR';
 
 export const LOADING = 'LOADING';
+
+export const POST_BOOK_TOUR = 'POST_BOOK_TOUR';
+export const POST_BOOK_TOUR_SUCCESS = 'POST_BOOK_TOUR_SUCCESS';

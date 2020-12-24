@@ -107,3 +107,20 @@ export const fetchDataArea = async (param) => {
         console.log(e)
     }
 }
+
+//post area tour
+export const postAreaTour = async (data) => {
+    try{
+
+        fetch("/add-area-tour",{
+            method: 'POST',
+            headers: {
+                'Content-Type':'application/json',
+            },
+            body: JSON.stringify(data)
+        })
+
+    }catch(e){
+        console.log(e)
+    }
+}
