@@ -4,9 +4,28 @@ import { errorAction } from '../actions/errorAction';
 import { loadingAction } from '../actions/loadingAction';
 import { receiveAll } from '../actions/placesAction';
 import { receiveSearch } from '../actions/searchAction';
+import { sendFeedbackSuccessAction } from '../actions/sendFeedback';
 import {fetchDataAll, fetchDataNameTypeArea, fetchDataNameType, fetchDataNameArea, fetchDataTypeArea,
-    fetchDataName, fetchDataType, fetchDataArea, postAreaTour} from '../api';
-import { POST_BOOK_TOUR, REQUEST_ALL_PLACES, REQUEST_SEARCHED_PLACES } from '../types';
+    fetchDataName, fetchDataType, fetchDataArea, postAreaTour, postFeedback} from '../api';
+import { POST_BOOK_TOUR, POST_FEEDBACK, REQUEST_ALL_PLACES, REQUEST_SEARCHED_PLACES } from '../types';
+
+
+//post feedback
+function* feedbackAsync(action){
+    try {
+        yield call (postFeedback,action.data);
+        yield put(sendFeedbackSuccessAction);
+    }
+    catch (e){
+        console.log("Caught the error :"+e)
+        yield put(errorAction("Error addingfeedback!"))
+    }
+}
+
+export function* watchFeedback(){
+    yield takeLatest(POST_FEEDBACK, feedbackAsync);
+}
+
 
 //post Area Tour
 function* bookTourAsync(action){

@@ -10,8 +10,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.models.AreaTour;
+import com.example.demo.models.ContactUs;
 import com.example.demo.models.Place;
 import com.example.demo.services.AreaTourService;
+import com.example.demo.services.ContactUsService;
 import com.example.demo.services.PlaceService;
 
 @RestController
@@ -22,6 +24,9 @@ public class Controller {
 	
 	@Autowired
 	private AreaTourService areaTourService;
+	
+	@Autowired
+	private ContactUsService contactUsService;
 	
 	
 	// PLACES
@@ -71,4 +76,11 @@ public class Controller {
     public void postPlace(@RequestBody AreaTour areaTour){
         areaTourService.addAreaTour(areaTour);
     }
+	
+	//Contact Us Feedback
+	@PostMapping("/add-feedback")
+	public void postFeedback(@RequestBody ContactUs contactUs) {
+		contactUsService.addFeedback(contactUs);
+	}
+	
 }

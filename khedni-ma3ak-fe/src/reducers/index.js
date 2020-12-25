@@ -4,6 +4,7 @@ import searchReducer from './searchReducer';
 import showReducer from './showReducer';
 import loadingReducer from './loadingReducer';
 import bookTourReducer from './bookTourReducer';
+import feedbackReducer from './feedbackReducer';
 
 
 const rootReducer = combineReducers({
@@ -11,7 +12,8 @@ const rootReducer = combineReducers({
     showReducer,
     allPlacesReducer,
     loadingReducer,
-    bookTourReducer
+    bookTourReducer,
+    feedbackReducer
 });
 
 export default rootReducer;

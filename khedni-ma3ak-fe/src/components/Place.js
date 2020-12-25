@@ -1,7 +1,6 @@
 import { Backdrop, Card, CardActionArea, CardActions, CardMedia, CircularProgress, Dialog, DialogContent, DialogTitle, Grid, makeStyles, Typography } from '@material-ui/core';
 import React, {useState} from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { showAllAction, showSearchedAction } from '../actions/showAction';
+import { useSelector } from 'react-redux';
 
 const useStyles = makeStyles((theme) => ({
   root: {

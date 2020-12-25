@@ -5,6 +5,9 @@ import Input from '@material-ui/core/Input';
 import TextField from '@material-ui/core/TextField';
 import { Box } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
+import { useDispatch } from 'react-redux';
+import { sendFeedbackAction } from '../actions/sendFeedback';
+import { Link } from 'react-router-dom';
 
 
 
@@ -26,11 +29,27 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-export default function CenteredGrid() {
+export default function ContactUs() {
+  const dispatch = useDispatch();
   const classes = useStyles();
+  const handleSubmit = () => {
+
+    let f_name = document.getElementById("fn_id").value.toString().split(" ").join("+");
+    let l_name = document.getElementById("ln_id").value.toString().split(" ").join("+");
+    let email = document.getElementById("email_id").value.toString().split(" ").join("+");
+    let description = document.getElementById("description_id").value.toString().split(" ").join("+");
+    
+    console.log(f_name)
+    console.log(l_name)
+    console.log(email)
+    console.log(description)
 
 
+   let data = {firstName: f_name , lastName: l_name, email: email, message: description};
 
+   dispatch(sendFeedbackAction(data));
+
+}
   return (
     <div className={classes.root} id="contact"> 
       <Grid container spacing={3}>
@@ -42,7 +61,7 @@ export default function CenteredGrid() {
             <label>First name:</label>
           </Grid>
           <Grid >
-            <Input defaultValue="" inputProps={{ 'aria-label': 'description' }} />
+            <Input id="fn_id" variant="outlined" defaultValue="" inputProps={{ 'aria-label': 'description' }} />
           </Grid>
         </Grid>
         <Grid item xs={6}>
@@ -50,7 +69,7 @@ export default function CenteredGrid() {
             <label>Last name:</label>
           </Grid>
           <Grid >
-            <Input defaultValue="" inputProps={{ 'aria-label': 'description' }} />
+            <Input id="ln_id" defaultValue="" inputProps={{ 'aria-label': 'description' }} />
           </Grid>
         </Grid>
         <Grid item xs={6}>
@@ -58,7 +77,7 @@ export default function CenteredGrid() {
             <label>Email:</label>
           </Grid>
           <Grid >
-            <Input defaultValue="" inputProps={{ 'aria-label': 'description' }} />
+            <Input id="email_id" defaultValue="" inputProps={{ 'aria-label': 'description' }} />
           </Grid>
         </Grid>
         <Grid item xs={6}>
@@ -67,6 +86,7 @@ export default function CenteredGrid() {
           </Grid>
           <Box width="30 %">
             <TextField
+            id="description_id"
               placeholder="Tell us what you need!"
               multiline
               rows={5}
@@ -77,10 +97,16 @@ export default function CenteredGrid() {
         </Grid>
         <Grid item xs={4}></Grid>
         <Grid item xs={3}>
-          <Button type="submit" variant="contained" >
-            Submit!
-          </Button>
-          <hr/>
+
+        <Link to="/"><Button
+            onClick={handleSubmit} 
+            size="large"  
+            variant="contained" 
+            color="secondary">
+              Send
+            </Button></Link>
+        </Grid>
+
 
         </Grid>
       </Grid>

@@ -124,3 +124,20 @@ export const postAreaTour = async (data) => {
         console.log(e)
     }
 }
+
+//post feedback
+export const postFeedback = async (data) => {
+    try{
+
+        fetch("/add-feedback",{
+            method: 'POST',
+            headers: {
+                'Content-Type':'application/json',
+            },
+            body: JSON.stringify(data)
+        })
+
+    }catch(e){
+        console.log(e)
+    }
+}
