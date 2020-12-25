@@ -36,7 +36,7 @@ function BookTour() {
    console.log("HANDLE SUBMIT DONE")
 }
   return (
-    <div>
+    <div id="bodyu">
       <br/>
       <Typography variant="h4" component="h2" gutterBottom>
         Book your Area Tour here !
@@ -82,14 +82,18 @@ function BookTour() {
             onClick={handleSubmit} 
             size="large"  
             variant="contained" 
-            color="secondary">
+            >
               Book Tour
             </Button></Link>
             
-        
+
+            
 
       </form>
     </div>
+    
+
+   
   );
 }
 

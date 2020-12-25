@@ -36,3 +36,59 @@
     transform: rotate(360deg);
   }
 }
+
+.subComponent-lg {
+  padding: 80px 0px;
+}
+
+.svg-card-3 {
+  padding: 30px;
+  margin: 10px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.svg-group p {
+  margin: 15px 0px;
+}
+
+.headerTitle p {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.svg-card-3 {
+  padding: 30px;
+  margin: 10px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+#footerBody {
+  background: #85b2c9;;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+#footerBody a {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+#footerBody a:hover {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+
+
+#contact {
+  background: #f3ecf5;;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+
+#bodyu {
+  background: #f3ecf5;;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+
+#appColor {
+  background: #a1c3f0;;
+  color: rgb(255, 255, 255);
+}
