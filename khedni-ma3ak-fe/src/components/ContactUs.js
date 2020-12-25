@@ -7,6 +7,7 @@ import { Box } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 
 
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -31,10 +32,10 @@ export default function CenteredGrid() {
 
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} id="contact"> 
       <Grid container spacing={3}>
-        <Grid item xs={12}>
-          <p>If you need any more information please contact us by filling this form!</p>
+        <Grid item xs={11}>
+          <p><b>If you need any more information please contact us by filling this form!</b></p>
         </Grid>
         <Grid item xs={6}>
           <Grid item xs={3}>
@@ -76,12 +77,19 @@ export default function CenteredGrid() {
         </Grid>
         <Grid item xs={4}></Grid>
         <Grid item xs={3}>
-          <Button type="submit" variant="contained" color="secondary">
+          <Button type="submit" variant="contained" >
             Submit!
           </Button>
-        </Grid>
+          <hr/>
 
+        </Grid>
       </Grid>
+
+
     </div>
+
   );
 }
+
+
+
