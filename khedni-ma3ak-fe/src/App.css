@@ -77,18 +77,22 @@
 
 
 #contact {
-  background: #f3ecf5;;
+  background: #ffffff;;
   color: rgba(0, 0, 0, 0.7);
 }
 
 
 #bodyu {
-  background: #f3ecf5;;
+  background: #ffffff;;
   color: rgba(0, 0, 0, 0.7);
 }
 
 
 #appColor {
-  background: #a1c3f0;;
+  background: #85b2c9;;
+  color: rgb(255, 255, 255);
+}
+
+Button{
   color: rgb(255, 255, 255);
 }
