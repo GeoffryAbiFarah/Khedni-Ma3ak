@@ -38,6 +38,7 @@ function BookTour() {
   return (
     <div id="bodyu">
       <br/>
+      <br/>
       <Typography variant="h4" component="h2" gutterBottom>
         Book your Area Tour here !
       </Typography>
@@ -78,20 +79,25 @@ function BookTour() {
                 }}
             />
             <br/>
+            <br/>
             <Link to="/"><Button
             onClick={handleSubmit} 
             size="large"  
             variant="contained" 
+            color="primary"
             >
               Book Tour
             </Button></Link>
-            
 
-            
+            <br/>
+      
+          
 
       </form>
+      <br/>
     </div>
     
+   
 
    
   );

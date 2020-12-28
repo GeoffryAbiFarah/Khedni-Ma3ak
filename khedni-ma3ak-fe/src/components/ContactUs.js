@@ -1,7 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import Input from '@material-ui/core/Input';
 import TextField from '@material-ui/core/TextField';
 import { Box } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
@@ -20,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     color: theme.palette.text.secondary,
   },
-  Input: {
+  TextField: {
     position: "absolute",
     borderRadius: 4,
     border: '1px solid #ced4da',
@@ -52,16 +51,17 @@ export default function ContactUs() {
 }
   return (
     <div className={classes.root} id="contact"> 
+    <br/>
       <Grid container spacing={3}>
         <Grid item xs={11}>
-          <p><b>If you need any more information please contact us by filling this form!</b></p>
+          <h2>If you need any more information please contact us by filling this form!</h2>
         </Grid>
         <Grid item xs={6}>
           <Grid item xs={3}>
             <label>First name:</label>
           </Grid>
           <Grid >
-            <Input id="fn_id" variant="outlined" defaultValue="" inputProps={{ 'aria-label': 'description' }} />
+            <TextField id="fn_id" variant="outlined" defaultValue="" TextFieldProps={{ 'aria-label': 'description' }} />
           </Grid>
         </Grid>
         <Grid item xs={6}>
@@ -69,15 +69,15 @@ export default function ContactUs() {
             <label>Last name:</label>
           </Grid>
           <Grid >
-            <Input id="ln_id" defaultValue="" inputProps={{ 'aria-label': 'description' }} />
+            <TextField id="ln_id" variant="outlined" defaultValue="" TextFieldProps={{ 'aria-label': 'description' }} />
           </Grid>
         </Grid>
         <Grid item xs={6}>
-          <Grid item xs={3}>
+          <Grid item xs={3}> 
             <label>Email:</label>
           </Grid>
           <Grid >
-            <Input id="email_id" defaultValue="" inputProps={{ 'aria-label': 'description' }} />
+            <TextField id="email_id" variant="outlined" defaultValue="" TextFieldProps={{ 'aria-label': 'description' }} />
           </Grid>
         </Grid>
         <Grid item xs={6}>
@@ -89,6 +89,7 @@ export default function ContactUs() {
             id="description_id"
               placeholder="Tell us what you need!"
               multiline
+              variant="outlined"
               rows={5}
               rowsMax={10}
 
@@ -101,14 +102,20 @@ export default function ContactUs() {
         <Link to="/"><Button
             onClick={handleSubmit} 
             size="large"  
-            variant="contained" 
-            color="secondary">
+            color="primary"
+            variant="contained"
+            >
               Send
             </Button></Link>
         </Grid>
 
+        
 
         </Grid>
+
+        <br/>
+        <br/>
+    
 
 
 
